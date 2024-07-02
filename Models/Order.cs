@@ -7,10 +7,12 @@ namespace MyECommerceApp.Models
     {
         public int Order_Id { get; set; }
         public string? User_Id { get; set; }
-        public float Total { get; set; }
+        public decimal Total { get; set; }
         public string? Shipping_Details { get; set; }
 
-        public Order(int order_Id, string? user_Id, float total, string? shipping_Details) {
+        public Order() {}
+
+        public Order(int order_Id, string? user_Id, decimal total, string? shipping_Details) {
             Order_Id = order_Id;
             User_Id = user_Id;
             Total = total;

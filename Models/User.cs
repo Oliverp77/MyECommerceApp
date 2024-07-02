@@ -10,6 +10,8 @@ namespace MyECommerceApp.Models
         public required string UserEmail { get; set; }
         public required string Password { get; set; }
 
+        public User() { }
+
         public User(int user_Id, string userName, string userEmail, string password) {
             User_Id = user_Id;
             UserName = userName;
