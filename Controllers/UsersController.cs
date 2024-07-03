@@ -4,18 +4,18 @@ using MyECommerceApp.Data; // Replace with the actual namespace of your Data fol
 using MyECommerceApp.Models; // Replace with the actual namespace of your Models folder
 using System.Threading.Tasks;
 
-public class ProductsController : Controller
+public class UsersController : Controller
 {
     private readonly ApplicationDbContext _context;
 
-    public ProductsController(ApplicationDbContext context)
+    public UsersController(ApplicationDbContext context)
     {
         _context = context;
     }
 
-    public async Task<IActionResult> ProductsIndex()
+    public IActionResult UserIndex()
     {
-        return View(await _context.Product.ToListAsync());
+        return View();
     }
 
     // Other actions
