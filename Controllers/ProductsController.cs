@@ -15,7 +15,7 @@ public class ProductsController : Controller
 
     public async Task<IActionResult> Index()
     {
-        return View(await _context.Products.ToListAsync());
+        return View(await _context.Product.ToListAsync());
     }
 
     // Other actions

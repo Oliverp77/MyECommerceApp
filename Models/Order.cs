@@ -8,15 +8,20 @@ namespace MyECommerceApp.Models
         public int OrderId { get; set; }
         public string? UserId { get; set; }
         public decimal Total { get; set; }
-        public string? Shipping_Details { get; set; }
+        public string? ShippingDetails { get; set; }
+        public List<Product> Products { get; set; }
 
-        public Order() {}
+        public Order() 
+        {
+            Products = new List<Product>();
+        }
 
-        public Order(int orderId, string? userId, decimal total, string? shipping_Details) {
+        public Order(int orderId, string? userId, decimal total, string? shippingDetails, List<Product> products) {
             OrderId = orderId;
             UserId = userId;
             Total = total;
-            Shipping_Details = shipping_Details;
+            ShippingDetails = shippingDetails;
+            Products = products;
         }
     }
 }

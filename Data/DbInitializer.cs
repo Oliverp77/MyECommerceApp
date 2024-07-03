@@ -13,7 +13,7 @@ namespace MyECommerceApp.Data
             context.Database.EnsureCreated();
 
             // Look for any products.
-            if (context.Products.Any())
+            if (context.Product.Any())
             {
                 return;   // DB has been seeded
             }
@@ -27,7 +27,7 @@ namespace MyECommerceApp.Data
 
             foreach (var p in products)
             {
-                context.Products.Add(p);
+                context.Product.Add(p);
             }
             context.SaveChanges();
         }

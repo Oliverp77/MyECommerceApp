@@ -11,10 +11,24 @@ namespace MyECommerceApp.Data
 
         }
 
-        public DbSet<Product> Products { get; set;}
-        public DbSet<User> Users { get; set;}
-        public DbSet<Order> Orders { get; set;}
+        public DbSet<Product> Product { get; set;}
+        public DbSet<User> User { get; set;}
+        public DbSet<Order> Order { get; set;}
 
+         protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Product>(entity =>
+            {
+                entity.Property(e => e.Price).HasColumnType("decimal(10,2)");
+            });
+
+            modelBuilder.Entity<Order>(entity =>
+            {
+                entity.Property(e => e.Total).HasColumnType("decimal(10,2)");
+            });
+        }
     }
 
 }
