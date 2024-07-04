@@ -27,10 +27,10 @@ public class UsersController : Controller
 
         var model = new User
         {
-            UserId = user.UserId,
-            UserName = user.UserName,
-            UserEmail = user.UserEmail,
-            Password = user.Password // In a real-world scenario, handle passwords securely
+            user_id = user.user_id,
+            name = user.name,
+            email = user.email,
+            password = user.password // In a real-world scenario, handle passwords securely
         };
 
         return View(model);
@@ -42,15 +42,15 @@ public class UsersController : Controller
     {
         if (ModelState.IsValid)
         {
-            var user = await _context.User.FindAsync(model.UserId);
+            var user = await _context.User.FindAsync(model.user_id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            user.UserName = model.UserName;
-            user.UserEmail = model.UserEmail;
-            user.Password = model.Password; // Handle passwords securely in a real-world scenario
+            user.name = model.name;
+            user.email = model.email;
+            user.password = model.password; // Handle passwords securely in a real-world scenario
 
             _context.Update(user);
             await _context.SaveChangesAsync();

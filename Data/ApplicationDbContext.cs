@@ -28,6 +28,15 @@ namespace MyECommerceApp.Data
             {
                 entity.Property(e => e.Total).HasColumnType("decimal(10,2)");
             });
+
+             modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.user_id);
+            entity.Property(e => e.user_id).ValueGeneratedOnAdd(); // This ensures auto-increment
+            entity.Property(e => e.name).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.email).IsRequired().HasMaxLength(100);
+            entity.Property(e => e.password).IsRequired().HasMaxLength(100);
+        });
         }
     }
 

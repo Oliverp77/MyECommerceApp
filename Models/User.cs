@@ -6,25 +6,29 @@ namespace MyECommerceApp.Models
 {
     public class User
     {
-        public int UserId { get; set; }
+        [Key]
+        public int user_id { get; set; }
+
         [Required]
         [StringLength(50)]
-        public string UserName { get; set; }
+        public string name { get; set; }
+
         [Required]
         [EmailAddress]
-        public string UserEmail { get; set; }
+        public string email { get; set; }
+        
         [Required]
         [StringLength(100)]
         [DataType(DataType.Password)]
-        public  string Password { get; set; }
+        public  string password { get; set; }
 
         public User() { }
 
-        public User(int userId, string userName, string userEmail, string password) {
-            UserId = userId;
-            UserName = userName;
-            UserEmail = userEmail;
-            Password = password;
+        public User(int User_id, string Name, string Email, string Password) {
+            user_id = User_id;
+            name = Name;
+            email = Email;
+            password = Password;
         }
     }
 }
