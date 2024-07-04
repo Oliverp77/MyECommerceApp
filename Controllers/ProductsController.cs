@@ -18,5 +18,26 @@ public class ProductsController : Controller
         return View(await _context.Product.ToListAsync());
     }
 
+    public async Task<IActionResult> Description(int? id) 
+    {
+        if(id == null) {
+            var errorViewModel = new ErrorViewModel {
+                ErrorMessage = "Product does not have a description."
+            };
+        
+        return View("Error", errorViewModel);
+        }
+
+        var product = await _context.Product.FirstOrDefaultAsync(m => m.ProductId == id);
+        if (product == null) 
+        {
+            var errorViewModel = new ErrorViewModel 
+            {
+                ErrorMessage = "Product not found."
+            };
+            return View("Error", errorViewModel);
+        }
+        return View(product);
+    }
     // Other actions
 }
