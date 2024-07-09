@@ -15,7 +15,7 @@ public class ProductsController : Controller
 
     public async Task<IActionResult> ProductsIndex()
     {
-        return View(await _context.Product.ToListAsync());
+        return View(await _context.Products.ToListAsync());
     }
 
     public async Task<IActionResult> Description(int? id) 
@@ -28,7 +28,7 @@ public class ProductsController : Controller
         return View("Error", errorViewModel);
         }
 
-        var product = await _context.Product.FirstOrDefaultAsync(m => m.ProductId == id);
+        var product = await _context.Products.FirstOrDefaultAsync(m => m.ProductId == id);
         if (product == null) 
         {
             var errorViewModel = new ErrorViewModel 

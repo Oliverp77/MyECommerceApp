@@ -1,34 +1,40 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyECommerceApp.Models
 {
     public class User
     {
         [Key]
-        public int user_id { get; set; }
+        [Column("user_id")]
+        public int UserId { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string name { get; set; }
+        [Column("name")]
+        public string Name { get; set; }
 
         [Required]
         [EmailAddress]
-        public string email { get; set; }
+        [Column("email")]
+        public string Email { get; set; }
         
         [Required]
         [StringLength(100)]
         [DataType(DataType.Password)]
-        public  string password { get; set; }
+        [Column("password")]
+        public  string Password { get; set; }
 
+        public ICollection<Order> Orders { get; set; }
         public User() { }
 
-        public User(int User_id, string Name, string Email, string Password) {
-            user_id = User_id;
-            name = Name;
-            email = Email;
-            password = Password;
+        public User(string name, string email, string password, List<Order> orders) {
+            Name = name;
+            Email = email;
+            Password = password;
+            Orders = orders ?? new List<Order>();
         }
     }
 }

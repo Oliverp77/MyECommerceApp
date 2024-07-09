@@ -28,15 +28,15 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
-            var user = await _context.User
-                .FirstOrDefaultAsync(u => u.email == model.Email && u.password == model.Password);
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
             if (user != null)
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, user.name),
-                    new Claim(ClaimTypes.Email, user.email),
-                    new Claim(ClaimTypes.NameIdentifier, user.user_id.ToString())
+                    new Claim(ClaimTypes.Name, user.Name),
+                    new Claim(ClaimTypes.Email, user.Email),
+                    new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
                 };
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -66,9 +66,9 @@ public class AccountController : Controller
         {
             var user = new User
             {
-                name = model.name,
-                email = model.email,
-                password = model.password // In a real-world scenario, hash the password
+                Name = model.name,
+                Email = model.email,
+                Password = model.password // In a real-world scenario, hash the password
             };
 
             _context.Add(user);

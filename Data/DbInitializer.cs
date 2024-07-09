@@ -13,21 +13,21 @@ namespace MyECommerceApp.Data
             context.Database.EnsureCreated();
 
             // Look for any products.
-            if (context.Product.Any())
+            if (context.Products.Any())
             {
                 return;   // DB has been seeded
             }
 
             var products = new Product[]
             {
-                new Product{Productname="Product1",Description="Description1",Price=9.99M},
-                new Product{Productname="Product2",Description="Description2",Price=19.99M},
-                new Product{Productname="Product3",Description="Description3",Price=29.99M}
+                new Product{Name="Product1",Description="Description1",Price=9.99M},
+                new Product{Name="Product2",Description="Description2",Price=19.99M},
+                new Product{Name="Product3",Description="Description3",Price=29.99M}
             };
 
             foreach (var p in products)
             {
-                context.Product.Add(p);
+                context.Products.Add(p);
             }
             context.SaveChanges();
         }
