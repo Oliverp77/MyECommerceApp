@@ -22,7 +22,6 @@ namespace MyECommerceApp.Data
         {
             base.OnModelCreating(modelBuilder);
 
-
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.UserId);
