@@ -17,6 +17,10 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Account/Login";
         options.LogoutPath = "/Account/Logout";
         options.AccessDeniedPath = "/Account/AccessDenied";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // Cookie expiration time
+        options.SlidingExpiration = true; // Extend the expiration time on each request
+        options.Cookie.HttpOnly = true; // HTTP only cookie
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Secure cookie, HTTPS only
     });
 
 builder.Services.AddAuthorization();

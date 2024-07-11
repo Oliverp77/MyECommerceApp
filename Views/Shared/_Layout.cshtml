@@ -34,7 +34,10 @@
                         @if (User.Identity != null && User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                                  <form id="logoutForm" asp-controller="Account" asp-action="Logout" method="post" style="display:none;">
+                                    @Html.AntiForgeryToken()
+                                </form>
+                                <a href="javascript:document.getElementById('logoutForm').submit();" class="nav-link">Logout</a>
                             </li>
                         }
                         else
