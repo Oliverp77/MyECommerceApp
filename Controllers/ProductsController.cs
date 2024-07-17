@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyECommerceApp.Data; // Replace with the actual namespace of your Data folder
 using MyECommerceApp.Models; // Replace with the actual namespace of your Models folder
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 public class ProductsController : Controller
@@ -39,5 +40,42 @@ public class ProductsController : Controller
         }
         return View(product);
     }
-    // Other actions
+    [HttpPost]
+    public async Task<IActionResult> AddToCart(int productId)
+    {
+        // Get the current user's cart
+        var userId = GetCurrentUserId(); // Implement this method to get the current user's ID
+        var cart = await _context.Carts
+            .Include(c => c.CartProducts)
+            .FirstOrDefaultAsync(c => c.UserId == userId);
+
+        if (cart == null)
+        {
+            cart = new Cart { UserId = userId };
+            _context.Carts.Add(cart);
+            await _context.SaveChangesAsync();
+        }
+
+        var cartProduct = cart.CartProducts.FirstOrDefault(cp => cp.ProductId == productId);
+        if (cartProduct == null)
+        {
+            cartProduct = new CartProduct { CartId = cart.CartId, ProductId = productId, Quantity = 1 };
+            _context.CartProducts.Add(cartProduct);
+        }
+        else
+        {
+            cartProduct.Quantity++;
+        }
+
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction(nameof(Index));
+    }
+
+    private int GetCurrentUserId()
+    {
+        // Implement a method to retrieve the current user's ID
+        return int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+    }
+
 }

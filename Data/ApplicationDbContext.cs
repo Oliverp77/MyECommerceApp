@@ -69,6 +69,16 @@ namespace MyECommerceApp.Data
                   .HasForeignKey(op => op.ProductId);
         });
 
+        modelBuilder.Entity<Cart>(entity =>
+            {
+                entity.HasKey(e => e.CartId);
+                entity.Property(e => e.CartId).ValueGeneratedOnAdd();
+
+                entity.HasOne(c => c.User)
+                      .WithMany(u => u.Carts)
+                      .HasForeignKey(c => c.UserId);
+            });
+
         modelBuilder.Entity<CartProduct>(entity =>
         {
             entity.HasKey(cp => new { cp.CartId, cp.ProductId });

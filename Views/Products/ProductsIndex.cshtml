@@ -4,9 +4,10 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Productname</th>
+            <th>Product Name</th>
             <th>Description</th>
             <th>Price</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,12 @@
                 <td>@product.Name</td>
                 <td>@product.Description</td>
                 <td>@product.Price</td>
+                <td>
+                    <form asp-action="AddToCart" method="post">
+                        <input type="hidden" name="productId" value="@product.ProductId" />
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>

@@ -28,13 +28,15 @@ namespace MyECommerceApp.Models
         public  string Password { get; set; }
 
         public ICollection<Order> Orders { get; set; }
+        public ICollection<Cart> Carts { get; set; }
         public User() { }
 
-        public User(string name, string email, string password, List<Order> orders) {
+        public User(string name, string email, string password, List<Order> orders, List<Cart> carts) {
             Name = name;
             Email = email;
             Password = password;
             Orders = orders ?? new List<Order>();
+            Carts = carts ?? new List<Cart>();
         }
     }
 }

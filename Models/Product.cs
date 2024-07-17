@@ -16,13 +16,15 @@ namespace MyECommerceApp.Models
         [Column("name")]
         public string Name { get; set; }
 
+        [StringLength(500)]
         [Column("description")]
         public string? Description { get; set; }
 
         [Required]
         [Column("price")]
         public decimal Price { get; set; }
-
+        
+        [StringLength(100)]
         [Column("category")]
         public string? Category { get; set; }
 

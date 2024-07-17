@@ -22,7 +22,7 @@ namespace MyECommerceApp.Models
         public decimal Total { get; set; }
 
         [Column("shipping_details")]
-        public string? ShippingDetails { get; set; }
+        public string ShippingDetails { get; set; }
 
         public ICollection<OrderProduct> OrderProducts { get; set; }
         public Order() 
