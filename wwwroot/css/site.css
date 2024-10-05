@@ -58,3 +58,46 @@ h1 {
   text-decoration: underline;
 }
 
+.center-header {
+  text-align: center;
+}
+
+.table {
+  margin: 0 auto;
+  width: 900px;
+  height: 400px;
+}
+
+.product-column {
+  width: 120px;
+}
+
+.description-column {
+  width: 300px;
+}
+
+.price-column {
+  width: 100px;
+}
+
+.addToCart-column {
+  width: 100px;
+}
+
+.cart-button {
+  display: flex;
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center;    /* Center them horizontally */
+  justify-content: center; /* Center them vertically */
+  height: 80px; /* Optional: Set a height for the button */
+  width: 100px; /* Optional: Set a width for the button */
+}
+
+.cart-button i {
+  font-size: 24px; /* Adjust icon size */
+  margin-bottom: 5px; /* Add some space between the icon and text */
+}
+
+.cart-button span {
+  font-size: 14px; /* Adjust text size */
+}

@@ -57,3 +57,7 @@ button.accept-policy {
   color: #0056b3;
   text-decoration: underline;
 }
+
+.addToCart-column {
+  width: 100px;
+}
