@@ -19,19 +19,76 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-image: url('/images/Background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar, .navbar-nav, .nav-link {
+  font-family: Papyrus, fantasy; /* Apply Papyrus to the navbar */
 }
 
 body {
   font-family: Arial, sans-serif;
+  font-size: 20px;
 }
 
-h1 {
-  color: #333;
+.text-center {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1, .header {
+    font-family: Papyrus, fantasy;
+    font-size: 60px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+    margin-top: 40px;
+}
+
+h3 {
+    font-family: Papyrus, fantasy;
+    font-size: 20px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 15.4px;
+}
+
+p, .table {
+    font-family: Papyrus, fantasy;
+    font-size: 20px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+blockquote {
+    font-family: Papyrus, fantasy;
+    font-size: 26px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+pre {
+    font-family: Papyrus, fantasy;
+    font-size: 20px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 18.5714px;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 50px !important;
 }
 
 .table, .table th, .table td {
@@ -62,10 +119,6 @@ h1 {
   display: flex;
   justify-content: space-around;
   width: 100%;
-}
-
-.center-header {
-  align-items: center;
 }
 
 .table {
@@ -119,3 +172,4 @@ h1 {
 .center-header {
   text-align: center;
 }
+
