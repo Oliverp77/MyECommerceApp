@@ -7,18 +7,21 @@ namespace MyECommerceApp.Models
 
     public class SignupViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         [StringLength(50)]
-        public required string name { get; set; }
+        public required string Name { get; set; }
 
-        [Required]
-        [EmailAddress]
-        public required string email { get; set; }
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email format")]
+        public required string Email { get; set; }
 
-        [Required]
-        [StringLength(100)]
+        [Required(ErrorMessage = "Password is required")]
+        [StringLength(100, MinimumLength = 8, ErrorMessage = "Password must be at least 8 characters long")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$", 
+        ErrorMessage = "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.")]
+
         [DataType(DataType.Password)]
-        public required string password { get; set; }
+        public required string Password { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

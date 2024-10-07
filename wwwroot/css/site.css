@@ -107,3 +107,15 @@ h1 {
 .cart-button span {
   font-size: 14px; /* Adjust text size */
 }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 100px;
+}
+
+.center-header {
+  text-align: center;
+}

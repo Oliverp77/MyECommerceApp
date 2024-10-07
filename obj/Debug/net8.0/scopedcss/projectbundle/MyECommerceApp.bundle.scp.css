@@ -16,6 +16,7 @@ a[b-c2y7jwmjof] {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+  margin-top: 50px;
 }
 
 .nav-pills .nav-link.active[b-c2y7jwmjof], .nav-pills .show > .nav-link[b-c2y7jwmjof] {
@@ -57,8 +58,4 @@ button.accept-policy[b-c2y7jwmjof] {
 .nav-link:hover[b-c2y7jwmjof] {
   color: #0056b3;
   text-decoration: underline;
-}
-
-.addToCart-column[b-c2y7jwmjof] {
-  width: 100px;
 }

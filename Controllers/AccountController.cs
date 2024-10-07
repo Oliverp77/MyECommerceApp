@@ -73,9 +73,9 @@ public class AccountController : Controller
         {
             var user = new User
             {
-                Name = model.name,
-                Email = model.email,
-                Password = model.password // In a real-world scenario, hash the password
+                Name = model.Name,
+                Email = model.Email,
+                Password = model.Password // In a real-world scenario, hash the password
             };
 
             _context.Add(user);
