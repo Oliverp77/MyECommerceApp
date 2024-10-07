@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyECommerceApp</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -27,9 +27,6 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="ProductsIndex">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="UserIndex">Profile</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         @if (User.Identity != null && User.Identity.IsAuthenticated)
@@ -40,16 +37,19 @@
                                 </form>
                                 <a href="javascript:document.getElementById('logoutForm').submit();" class="nav-link">Logout</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="UserIndex">Profile</a>
+                            </li>
                         }
                         else
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Sign In</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text dark" asp-area="" asp-controller="Account" asp-action="Signup">Sign Up</a>
+                            </li>
                         }
-                        <li class="nav-item">
-                            <a class="nav-link text dark" asp-area="" asp-controller="Account" asp-action="Signup">Sign Up</a>
-                        </li>
                     </ul>
                 </div>
             </div>
