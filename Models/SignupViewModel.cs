@@ -25,7 +25,7 @@ namespace MyECommerceApp.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Compare("password")]
+        [Compare("Password")]
         public required string ConfirmPassword { get; set; }
     }
 
