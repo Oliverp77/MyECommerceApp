@@ -28,6 +28,10 @@ namespace MyECommerceApp.Models
         [Column("category")]
         public string? Category { get; set; }
 
+        [StringLength(500)]
+        [Column("ImageURL")]
+        public string? ImageURL { get; set; }
+
         public ICollection<OrderProduct> OrderProducts { get; set; }
         public ICollection<CartProduct> CartProducts { get; set; }
 

@@ -190,10 +190,19 @@ pre {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #003366;
   font-family: 'Papyrus', fantasy;
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .product-card h2 {
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .product-card p {
@@ -218,4 +227,17 @@ pre {
 
 .add-to-cart-btn:hover {
   background-color: #0044cc;
+}
+
+.quantity-box {
+  margin-bottom: 15px;
+}
+
+.quantity-input {
+  width: 50px; /* Adjust the width of the input */
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }

@@ -41,10 +41,9 @@ public class ProductsController : Controller
         return View(product);
     }
     [HttpPost]
-    public async Task<IActionResult> AddToCart(int productId)
+    public async Task<IActionResult> AddToCart(int productId, int quantity)
     {
-        // Get the current user's cart
-        var userId = GetCurrentUserId(); // Implement this method to get the current user's ID
+        var userId = GetCurrentUserId();
         var cart = await _context.Carts
             .Include(c => c.CartProducts)
             .FirstOrDefaultAsync(c => c.UserId == userId);
@@ -59,17 +58,17 @@ public class ProductsController : Controller
         var cartProduct = cart.CartProducts.FirstOrDefault(cp => cp.ProductId == productId);
         if (cartProduct == null)
         {
-            cartProduct = new CartProduct { CartId = cart.CartId, ProductId = productId, Quantity = 1 };
+            cartProduct = new CartProduct { CartId = cart.CartId, ProductId = productId, Quantity = quantity };
             _context.CartProducts.Add(cartProduct);
         }
         else
         {
-            cartProduct.Quantity++;
+            cartProduct.Quantity += quantity;
         }
 
         await _context.SaveChangesAsync();
 
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof(ProductsIndex));
     }
 
     private int GetCurrentUserId()

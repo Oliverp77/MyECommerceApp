@@ -9,6 +9,18 @@
       "PackagePath": "staticwebassets\\Images\\Background.jpg"
     },
     {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\BlueFrog.jpeg",
+      "PackagePath": "staticwebassets\\Images\\BlueFrog.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\BlueLobster.webp",
+      "PackagePath": "staticwebassets\\Images\\BlueLobster.webp"
+    },
+    {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\blue-crayfish.jpg",
+      "PackagePath": "staticwebassets\\Images\\blue-crayfish.jpg"
+    },
+    {
       "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
