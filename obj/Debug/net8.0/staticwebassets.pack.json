@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\MyECommerceApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\Background.jpg",
+      "PackagePath": "staticwebassets\\Images\\Background.jpg"
+    },
+    {
       "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

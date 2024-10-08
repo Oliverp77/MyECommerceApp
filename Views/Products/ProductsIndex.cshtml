@@ -1,31 +1,20 @@
 @model IEnumerable<MyECommerceApp.Models.Product>
 
-<h1 class="header">Products</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th class="product-column">Product Name</th>
-            <th class="description-column">Description</th>
-            <th class="price-column">Price</th>
-            <th class="addToCart-column"></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var product in Model)
-        {
-            <tr>
-                <td>@product.Name</td>
-                <td>@product.Description</td>
-                <td>@product.Price</td>
-                <td>
-                    <form asp-action="AddToCart" method="post">
-                        <input type="hidden" name="productId" value="@product.ProductId" />
-                        <button type="submit" class="btn btn-primary cart-button">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<h1 class="center-header">Products</h1>
+
+<div class="products-container">
+    @foreach (var product in Model)
+    {
+        <div class="product-card">
+            <h2>@product.Name</h2>
+            <p>@product.Description</p>
+            <span class="price">$@product.Price</span>
+            <form asp-action="AddToCart" method="post">
+                <input type="hidden" name="productId" value="@product.ProductId" />
+                <button type="submit" class="btn btn-primary add-to-cart-btn">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </form>
+        </div>
+    }
+</div>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4a0FmDIrpinOg7jiF6Hn+QxhxIQtqESqidZqXxRhsj4=",
+  "Hash": "1zgdyInxy+DALq7IbXTyBhRFlaCKqMGjeESBMIMxYjU=",
   "Source": "MyECommerceApp",
   "BasePath": "_content/MyECommerceApp",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\Background.jpg",
+      "SourceId": "MyECommerceApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\",
+      "BasePath": "_content/MyECommerceApp",
+      "RelativePath": "Images/Background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Background.jpg"
     },
     {
       "Identity": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\js\\site.js",
