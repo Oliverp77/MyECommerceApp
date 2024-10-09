@@ -9,12 +9,32 @@
       "PackagePath": "staticwebassets\\Images\\Background.jpg"
     },
     {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\Backpack.webp",
+      "PackagePath": "staticwebassets\\Images\\Backpack.webp"
+    },
+    {
       "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\BlueFrog.jpeg",
       "PackagePath": "staticwebassets\\Images\\BlueFrog.jpeg"
     },
     {
       "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\BlueLobster.webp",
       "PackagePath": "staticwebassets\\Images\\BlueLobster.webp"
+    },
+    {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\Earbuds.webp",
+      "PackagePath": "staticwebassets\\Images\\Earbuds.webp"
+    },
+    {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\Necklace.webp",
+      "PackagePath": "staticwebassets\\Images\\Necklace.webp"
+    },
+    {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\WaterBottle.webp",
+      "PackagePath": "staticwebassets\\Images\\WaterBottle.webp"
+    },
+    {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\YogaMat.webp",
+      "PackagePath": "staticwebassets\\Images\\YogaMat.webp"
     },
     {
       "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\blue-crayfish.jpg",
