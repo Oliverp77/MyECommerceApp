@@ -7,13 +7,9 @@ a.navbar-brand {
   word-break: break-all;
 }
 
-a {
-  color: #0077cc;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
+.btn-primary-2 {
+  background-color: #3366cc;
+  color: white;
   border-color: #1861ac;
   margin-top: 50px;
 }
@@ -41,7 +37,7 @@ button.accept-policy {
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
@@ -51,7 +47,6 @@ button.accept-policy {
 .nav-link {
   font-size: 16px;
   padding: 10px;
-  color: #007bff;
 }
 
 .nav-link:hover {

@@ -13,12 +13,24 @@
       "PackagePath": "staticwebassets\\Images\\Backpack.webp"
     },
     {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\BlueBird.webp",
+      "PackagePath": "staticwebassets\\Images\\BlueBird.webp"
+    },
+    {
       "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\BlueFrog.jpeg",
       "PackagePath": "staticwebassets\\Images\\BlueFrog.jpeg"
     },
     {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\BlueFrogAI.webp",
+      "PackagePath": "staticwebassets\\Images\\BlueFrogAI.webp"
+    },
+    {
       "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\BlueLobster.webp",
       "PackagePath": "staticwebassets\\Images\\BlueLobster.webp"
+    },
+    {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\BlueLobsterAI.webp",
+      "PackagePath": "staticwebassets\\Images\\BlueLobsterAI.webp"
     },
     {
       "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\Earbuds.webp",
@@ -29,8 +41,24 @@
       "PackagePath": "staticwebassets\\Images\\Necklace.webp"
     },
     {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\WallArt.webp",
+      "PackagePath": "staticwebassets\\Images\\WallArt.webp"
+    },
+    {
       "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\WaterBottle.webp",
       "PackagePath": "staticwebassets\\Images\\WaterBottle.webp"
+    },
+    {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\WaterEffect.jpg",
+      "PackagePath": "staticwebassets\\Images\\WaterEffect.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\WaterEffect.webp",
+      "PackagePath": "staticwebassets\\Images\\WaterEffect.webp"
+    },
+    {
+      "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\WaterRipple.jpg",
+      "PackagePath": "staticwebassets\\Images\\WaterRipple.jpg"
     },
     {
       "Id": "C:\\Users\\Oliver\\MyECommerceApp\\wwwroot\\Images\\YogaMat.webp",

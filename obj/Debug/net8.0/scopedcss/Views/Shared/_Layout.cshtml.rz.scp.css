@@ -7,13 +7,9 @@ a.navbar-brand[b-c2y7jwmjof] {
   word-break: break-all;
 }
 
-a[b-c2y7jwmjof] {
-  color: #0077cc;
-}
-
-.btn-primary[b-c2y7jwmjof] {
-  color: #fff;
-  background-color: #1b6ec2;
+.btn-primary-2[b-c2y7jwmjof] {
+  background-color: #3366cc;
+  color: white;
   border-color: #1861ac;
   margin-top: 50px;
 }
@@ -41,7 +37,7 @@ button.accept-policy[b-c2y7jwmjof] {
 }
 
 .footer[b-c2y7jwmjof] {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
@@ -51,7 +47,6 @@ button.accept-policy[b-c2y7jwmjof] {
 .nav-link[b-c2y7jwmjof] {
   font-size: 16px;
   padding: 10px;
-  color: #007bff;
 }
 
 .nav-link:hover[b-c2y7jwmjof] {

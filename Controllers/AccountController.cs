@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using MyECommerceApp.Data; // Replace with the actual namespace of your Data folder
-using MyECommerceApp.Models; // Replace with the actual namespace of your Models folder
+using MyECommerceApp.Data;
+using MyECommerceApp.Models;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -75,7 +75,7 @@ public class AccountController : Controller
             {
                 Name = model.Name,
                 Email = model.Email,
-                Password = model.Password // In a real-world scenario, hash the password
+                Password = model.Password
             };
 
             _context.Add(user);

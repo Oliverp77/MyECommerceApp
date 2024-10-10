@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MyECommerceApp.Data; // Replace with the actual namespace of your Data folder
-using MyECommerceApp.Models; // Replace with the actual namespace of your Models folder
+using MyECommerceApp.Data; 
+using MyECommerceApp.Models; 
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -17,7 +17,7 @@ public class UsersController : Controller
     [HttpGet]
     public async Task<IActionResult> UserIndex()
     {
-        var userId = GetCurrentUserId(); // Replace with actual method to get the current user ID
+        var userId = GetCurrentUserId();
         var user = await _context.Users.FindAsync(userId);
         
         if (user == null)
@@ -30,7 +30,7 @@ public class UsersController : Controller
             UserId = user.UserId,
             Name = user.Name,
             Email = user.Email,
-            Password = user.Password // In a real-world scenario, handle passwords securely
+            Password = user.Password 
         };
 
         return View(model);
@@ -50,7 +50,7 @@ public class UsersController : Controller
 
             user.Name = model.Name;
             user.Email = model.Email;
-            user.Password = model.Password; // Handle passwords securely in a real-world scenario
+            user.Password = model.Password;
 
             _context.Update(user);
             await _context.SaveChangesAsync();
@@ -66,6 +66,4 @@ public class UsersController : Controller
         var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
         return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
     }
-
-    // Other actions
 }

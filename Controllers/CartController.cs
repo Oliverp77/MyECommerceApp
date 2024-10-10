@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MyECommerceApp.Data; // Replace with the actual namespace of your Data folder
-using MyECommerceApp.Models; // Replace with the actual namespace of your Models folder
+using MyECommerceApp.Data;
+using MyECommerceApp.Models; 
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -16,7 +16,7 @@ public class CartController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var userId = GetCurrentUserId(); // Implement this method to get the current user's ID
+        var userId = GetCurrentUserId(); 
         var cart = await _context.Carts
             .Include(c => c.CartProducts)
                 .ThenInclude(cp => cp.Product)
@@ -57,7 +57,6 @@ public class CartController : Controller
 
     private int GetCurrentUserId()
     {
-        // Implement a method to retrieve the current user's ID
         return int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
     }
 }

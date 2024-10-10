@@ -31,7 +31,7 @@ body {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Papyrus, fantasy;
   font-size: 20px;
 }
 
@@ -109,18 +109,46 @@ pre {
 .nav-link {
   font-size: 16px;
   padding: 10px;
-  color: #007bff;
+  color: #80dfff;
+  transition: color 0.6s ease;
+  vertical-align: baseline !important;
 }
 
-.nav-link:hover {
-  color: #0056b3;
-  text-decoration: underline;
+.nav-link.active, .nav-link:hover {
+  text-shadow: 0 0 5px #00c1ff;
+  color: #00c1ff;
+  background-color: #005bb5;
+  background-image: radial-gradient(circle at center, rgba(0, 192, 255, 0.3), transparent);
+  box-shadow: 0 0 10px #00c1ff;
+  background-color: rgba(0, 192, 255, 0.2);
+
+}
+
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.navbar {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(135deg, rgba(0, 64, 128, 0.9), rgba(0, 192, 255, 0.8));
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
 }
 
 .navbar-nav {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  border: none;
 }
 
 .table {
@@ -145,21 +173,19 @@ pre {
   width: 100px;
 }
 
-.cart-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;   
-  justify-content: center; 
-  height: 80px; 
-  width: 100px; 
+.cart-btn {     
+  background: linear-gradient(135deg, rgba(0, 192, 255, 0.8), rgba(0, 64, 128, 0.9));
+  color: #00c1ff;
+  border: 1px solid #00c1ff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cart-button i {
+.cart-btn i {
   font-size: 24px; 
   margin-bottom: 5px; 
 }
 
-.cart-button span {
+.cart-btn span {
   font-size: 14px; 
 }
 
@@ -236,7 +262,7 @@ pre {
 }
 
 .quantity-input {
-  width: 50px; /* Adjust the width of the input */
+  width: 50px;
   padding: 5px;
   font-size: 14px;
   text-align: center;
