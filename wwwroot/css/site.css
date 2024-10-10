@@ -62,11 +62,15 @@ h3 {
 
 p, .table {
     font-family: Papyrus, fantasy;
-    font-size: 20px;
+    font-size: 24px;
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
     line-height: 20px;
+}
+
+p {
+  margin-top: 30px;
 }
 
 blockquote {
@@ -132,10 +136,14 @@ pre {
 .navbar {
   padding: 0;
   margin: 0;
-  background: linear-gradient(135deg, rgba(0, 64, 128, 0.9), rgba(0, 192, 255, 0.8));
+  background: linear-gradient(135deg, rgba(0, 64, 128, 0.9), rgba(0, 192, 255, 0.8), rgba(0, 128, 128, 0.8));
   backdrop-filter: blur(10px);
   color: #ffffff;
   animation: float 4s ease-in-out infinite;
+}
+
+.nav-item {
+  margin: 0 15px;
 }
 
 @keyframes float {
@@ -146,7 +154,7 @@ pre {
 
 .navbar-nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   border: none;
 }
@@ -174,14 +182,22 @@ pre {
 }
 
 .cart-btn {     
-  background: linear-gradient(135deg, rgba(0, 192, 255, 0.8), rgba(0, 64, 128, 0.9));
   color: #00c1ff;
   border: 1px solid #00c1ff;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+  height: 35px;
+  padding: 8px 16px;
+  display: inline-flex;
+}
+
+.navbar, .cart-btn {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .cart-btn i {
-  font-size: 24px; 
+  font-size: 16px; 
   margin-bottom: 5px; 
 }
 
