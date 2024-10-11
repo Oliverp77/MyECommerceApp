@@ -285,3 +285,23 @@ pre {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group:nth-child(odd) {
+  grid-column: 1;
+}
+
+.form-group:nth-child(even) {
+  grid-column: 2;
+}

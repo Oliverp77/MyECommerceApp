@@ -25,12 +25,13 @@ public class UsersController : Controller
             return NotFound();
         }
 
-        var model = new User
+        var model = new UserProfileViewModel
         {
             UserId = user.UserId,
-            Name = user.Name,
-            Email = user.Email,
-            Password = user.Password 
+            CurrentName = user.Name,
+            CurrentEmail = user.Email,
+            NewName = string.Empty,
+            NewEmail = string.Empty
         };
 
         return View(model);
@@ -38,7 +39,7 @@ public class UsersController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> UserIndex(User model)
+    public async Task<IActionResult> UserIndex(UserProfileViewModel model)
     {
         if (ModelState.IsValid)
         {
@@ -48,9 +49,26 @@ public class UsersController : Controller
                 return NotFound();
             }
 
-            user.Name = model.Name;
-            user.Email = model.Email;
-            user.Password = model.Password;
+            if (!string.IsNullOrEmpty(model.NewName))
+        {
+            user.Name = model.NewName;
+        }
+
+        if (!string.IsNullOrEmpty(model.NewEmail))
+        {
+            user.Email = model.NewEmail;
+        }
+
+        if (!string.IsNullOrEmpty(model.NewPassword) && user.Password == model.CurrentPassword)
+        {
+            user.Password = model.NewPassword; 
+        }
+
+        if (user.Password != model.CurrentPassword)
+        {
+            ModelState.AddModelError("CurrentPassword", "The current password is incorrect.");
+            return View(model);
+        }
 
             _context.Update(user);
             await _context.SaveChangesAsync();
@@ -66,4 +84,6 @@ public class UsersController : Controller
         var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
         return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
     }
+
+
 }
