@@ -305,3 +305,22 @@ pre {
 .form-group:nth-child(even) {
   grid-column: 2;
 }
+
+.input-error-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.input-error-wrapper input {
+  width: 250px;
+  margin-right: 10px;
+}
+
+.text-danger {
+  color: red;
+  font-size: 0.875em;
+  margin-left: 10px;
+  white-space: nowrap;
+  min-width: 200px;
+  display: inline-block;
+}
