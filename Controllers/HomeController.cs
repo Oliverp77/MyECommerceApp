@@ -25,7 +25,13 @@ public class HomeController : Controller
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
+{
+    var errorViewModel = new ErrorViewModel
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
+        RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
+        ErrorMessage = "An unexpected error occurred."
+    };
+    return View(errorViewModel);
+}
+
 }

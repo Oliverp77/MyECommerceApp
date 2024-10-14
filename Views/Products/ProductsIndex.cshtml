@@ -1,0 +1,25 @@
+@model IEnumerable<MyECommerceApp.Models.Product>
+
+<h1 class="center-header">Products</h1>
+
+<div class="products-container">
+    @foreach (var product in Model)
+    {
+        <div class="product-card">
+            <img src="@product.ImageURL" alt="@product.Name" class="product-image" />
+            <h2>@product.Name</h2>
+            <p>@product.Description</p>
+            <span class="price">$@product.Price</span>
+            <form asp-action="AddToCart" method="post">
+                <input type="hidden" name="productId" value="@product.ProductId" />
+                <div class="quantity-box">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" min="1" value="1" class="quantity-input" />
+                </div>
+                <button type="submit" class="btn btn-primary-2 add-to-cart-btn">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </form>
+        </div>
+    }
+</div>
