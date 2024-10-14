@@ -19,30 +19,14 @@ public class ProductsController : Controller
         return View(await _context.Products.ToListAsync());
     }
 
-    public async Task<IActionResult> Description(int? id) 
-    {
-        if(id == null) {
-            var errorViewModel = new ErrorViewModel {
-                ErrorMessage = "Product does not have a description."
-            };
-        
-        return View("Error", errorViewModel);
-        }
-
-        var product = await _context.Products.FirstOrDefaultAsync(m => m.ProductId == id);
-        if (product == null) 
-        {
-            var errorViewModel = new ErrorViewModel 
-            {
-                ErrorMessage = "Product not found."
-            };
-            return View("Error", errorViewModel);
-        }
-        return View(product);
-    }
     [HttpPost]
     public async Task<IActionResult> AddToCart(int productId, int quantity)
     {
+         if (!User.Identity.IsAuthenticated)
+    {
+        return RedirectToAction("Login", "Account");
+    }
+
         var userId = GetCurrentUserId();
         var cart = await _context.Carts
             .Include(c => c.CartProducts)
@@ -73,7 +57,8 @@ public class ProductsController : Controller
 
     private int GetCurrentUserId()
     {
-        return int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+         var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+        return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
     }
 
 }

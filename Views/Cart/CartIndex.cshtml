@@ -1,43 +1,44 @@
 @model MyECommerceApp.Models.Cart
 
 <h1>Your Cart</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Total</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model?.CartProducts != null)
+
+<div class="cart-container">
+    @if (Model?.CartProducts != null)
+    {
+        @foreach (var item in Model.CartProducts)
         {
-            @foreach (var item in Model.CartProducts)
-            {
-                <tr>
-                    <td>@item.Product.Name</td>
-                    <td>
-                        <form asp-action="UpdateQuantity" method="post">
-                            <input type="hidden" name="cartId" value="@item.CartId" />
-                            <input type="hidden" name="productId" value="@item.ProductId" />
-                            <input type="number" name="quantity" value="@item.Quantity" min="1" />
-                            <button type="submit" class="btn btn-secondary">Update</button>
-                        </form>
-                    </td>
-                    <td>@item.Product.Price</td>
-                    <td>@(item.Product.Price * item.Quantity)</td>
-                    <td>
-                        <form asp-action="RemoveFromCart" method="post">
-                            <input type="hidden" name="cartId" value="@item.CartId" />
-                            <input type="hidden" name="productId" value="@item.ProductId" />
-                            <button type="submit" class="btn btn-danger">Remove</button>
-                        </form>
-                    </td>
-                </tr>
-            }
+            <div class="cart-item-card">
+                <!-- Display Product Image -->
+                <div class="cart-item-image">
+                    <img src="@item.Product.ImageURL" alt="@item.Product.Name" class="product-image" />
+                </div>
+
+                <!-- Product Details -->
+                <div class="cart-item-details">
+                    <h2>@item.Product.Name</h2>
+                    <p>Price: @item.Product.Price</p>
+                    <p>Total: @(item.Product.Price * item.Quantity)</p>
+                </div>
+
+                <!-- Quantity Form -->
+                <div class="cart-item-actions">
+                    <form asp-action="UpdateQuantity" method="post" class="cart-item-form">
+                        <input type="hidden" name="cartId" value="@item.CartId" />
+                        <input type="hidden" name="productId" value="@item.ProductId" />
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" name="quantity" value="@item.Quantity" min="1" />
+                        <button type="submit" class="btn btn-secondary">Update</button>
+                    </form>
+
+                    <!-- Remove Button -->
+                    <form asp-action="RemoveFromCart" method="post" class="cart-item-form">
+                        <input type="hidden" name="cartId" value="@item.CartId" />
+                        <input type="hidden" name="productId" value="@item.ProductId" />
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+    }
+</div>
 

@@ -65,8 +65,8 @@ p, .table {
     font-size: 24px;
     font-style: normal;
     font-variant: normal;
-    font-weight: 400;
-    line-height: 20px;
+    font-weight: 600;
+    line-height: 30px;
 }
 
 p {
@@ -323,4 +323,84 @@ pre {
   white-space: nowrap;
   min-width: 200px;
   display: inline-block;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.cart-item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-image {
+  flex: 1;
+}
+
+.cart-item-image img {
+  width: 170px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex: 2;
+  padding-left: 15px;
+}
+
+.cart-item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-item-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-item-quantity input {
+  margin-bottom: 10px;
+  width: 60px;
+  text-align: center;
+}
+
+.cart-item-remove button, .cart-item-quantity button {
+  width: 100px; /* Make both buttons the same width */
+}
+
+.about-me-container {
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+}
+
+.about-me-text {
+  background-color: rgba(0, 64, 128, 0.7);
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.about-me-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-me-text p {
+  font-size: 18px;
+  line-height: 1.6;
 }

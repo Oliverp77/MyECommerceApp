@@ -26,21 +26,6 @@ public class CartController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> UpdateQuantity(int cartId, int productId, int quantity)
-    {
-        var cartProduct = await _context.CartProducts
-            .FirstOrDefaultAsync(cp => cp.CartId == cartId && cp.ProductId == productId);
-        
-        if (cartProduct != null)
-        {
-            cartProduct.Quantity = quantity;
-            await _context.SaveChangesAsync();
-        }
-
-        return RedirectToAction(nameof(Index));
-    }
-
-    [HttpPost]
     public async Task<IActionResult> RemoveFromCart(int cartId, int productId)
     {
         var cartProduct = await _context.CartProducts
@@ -59,5 +44,31 @@ public class CartController : Controller
     {
         var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
         return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> UpdateQuantity(int cartId, int productId, int quantity) {
+        var cartProduct = await _context.CartProducts
+            .FirstOrDefaultAsync(cp => cp.CartId == cartId && cp.ProductId == productId);
+
+        if (cartProduct == null)
+        {
+            return NotFound();
+        }
+
+        if (quantity > 0) 
+        {
+            cartProduct.Quantity = quantity; 
+        }
+
+        else
+        {
+            return BadRequest("Quantity must be atleast 1");
+        }
+
+        _context.CartProducts.Update(cartProduct);
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction(nameof(CartIndex));
     }
 }
